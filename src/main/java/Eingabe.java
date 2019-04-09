@@ -1,6 +1,6 @@
 import java.io.*;
 
-public class Input {
+public class Eingabe{
     public static void main (String[] args) {
         byte eingabe[] = new byte[256];
         int anzahlBytesgelesen = -1;
@@ -13,7 +13,7 @@ public class Input {
         if (anzahlBytesgelesen >0){
             eingelesenerText = new String(eingabe, 0, anzahlBytesgelesen);
         }
-        System.out.println("Es wurden "+anzahlBytesgelesen+"Bytes gelesen");
+        //System.out.println("Es wurden "+anzahlBytesgelesen+"Bytes gelesen");
         System.out.println("Folgender Text wurde eingegeben: "+eingelesenerText);
     }
 

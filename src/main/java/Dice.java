@@ -12,7 +12,8 @@ public class Dice {
         int e = dice.nextInt(seiten)+1 ;
         return e;
     }
-    public int dicen(){
+
+    public void dicen() {
         Dice Wurf1 = new Dice(6);
         Dice Wurf2 = new Dice(6);
 
