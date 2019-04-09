@@ -1,2 +1,2 @@
 # haufe.java.dice
-It´s mine!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+Hello there. 
