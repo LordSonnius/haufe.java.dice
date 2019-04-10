@@ -65,6 +65,8 @@ public class HaufeDice {
             x = 1;
         } else {
             System.out.println("Error 404: Please type in 'y' or 'n'!");
+            System.out.println("The outcome is " + ocome);
+            System.exit(0);
         }
         return x;
     }
