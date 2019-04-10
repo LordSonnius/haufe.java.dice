@@ -6,29 +6,49 @@ public class HaufeDice {
         int n = 0;
         Dice wuerfel = new Dice(1);
 
-        //while (n == 0) {
-        int ocome = wuerfel.rolldice();//Roll 2 Dice and save outcome
+        while (n == 0) {
+            int ocome = wuerfel.rolldice();//Roll 2 Dice and save outcome
 
-        Scanner scan = new Scanner(System.in);
+            Scanner scan = new Scanner(System.in);
 
-        System.out.print("Guesss the outcome.");//Ask user what he/she thinks is thrown
+            System.out.print("Guesss the outcome.");//Ask user what he/she thinks is thrown
 
-        //try {
-        int num = scan.nextInt();
-        scan.close();
+            int x = 0;
+            while (x == 0) {
+                int num = scan.nextInt();
 
-        System.out.println("The number entered by user: " + num);
-        if (num < ocome) {
-            System.out.println("The outcome is higher than your guess. Do you want to guess again? 'y' or 'n'");
+                System.out.println("The number entered by user: " + num);
 
 
-        } else if (num > ocome) {
-            System.out.println("The outcome is lower than your guess. Do you want to guess again? 'y' or 'n'");
+                if (num < ocome) {
+                    System.out.println("The outcome is higher than your guess. Do you want to guess again? 'y' or 'n'");
+                    String userinput = scan.next();
 
+                    if (userinput.equals("y")) {
+                        x = 0;
+                    } else if (userinput.equals("n")) {
+                        x = 1;
+                    } else {
+                        System.out.println("Error 404: Please type in 'y' or 'n'!");
+                    }
 
-        } else if (num == ocome) {
-            System.out.println("Congratulations, you guessed right :D ");
-        }
+                } else if (num > ocome) {
+                    System.out.println("The outcome is lower than your guess. Do you want to guess again? 'y' or 'n'");
+                    String userinput = scan.next();
+
+                    if (userinput.equals("y")) {
+                        x = 0;
+                    } else if (userinput.equals("n")) {
+                        x = 1;
+                    } else {
+                        System.out.println("Error 404: Please type in 'y' or 'n'!");
+                    }
+
+                } else if (num == ocome) {
+                    System.out.println("Congratulations, you guessed right :D ");
+                    x = 1;
+                }
+            }
 
 //
 //            //} catch (IOException e) {
@@ -36,26 +56,22 @@ public class HaufeDice {
 //            //}
 //
 //
-//            System.out.println("Roll Dice again? Type 'y' for Yes and 'n' for No.");
-//
-//            BufferedReader reader =
-//                    new BufferedReader(new InputStreamReader(System.in));
-//            try {
-//                String userinput = reader.readLine();
-//
-//                if (userinput.equals("y")) {
-//                    n = 0;
-//                } else if (userinput.equals("n")) {
-//                    n = 1;
-//                    System.out.println("Bye");
-//                } else {
-//                    System.out.println("Error 404: Please type in 'y' or 'n'!");
-//                }
-//            } catch (IOException e) {
-//                e.printStackTrace();
-//            }
+            System.out.print("Roll Dice again? Type 'y' for Yes and 'n' for No.");
 
-        //}
+
+            String userinput = scan.next();
+
+            if (userinput.equals("y")) {
+                n = 0;
+            } else if (userinput.equals("n")) {
+                n = 1;
+                System.out.println("Bye");
+            } else {
+                System.out.println("Error 404: Please type in 'y' or 'n'!");
+            }
+
+
+        }
 
 
     }
