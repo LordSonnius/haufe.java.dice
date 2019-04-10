@@ -4,27 +4,35 @@ import java.io.InputStreamReader;
 public class HaufeDice {
 
     public static void main(String[] args) {
-
+        int n=0;
         Dice wuerfel = new Dice(1);
-        wuerfel.rolldice();
 
-        System.out.println("Throw Dice again? Type 'y' for Yes and 'N' for No.");
+        while (n==0){
+            wuerfel.rolldice();
 
-        BufferedReader reader =
-                new BufferedReader(new InputStreamReader(System.in));
-        try {
-            String userinput = reader.readLine();
+            System.out.println("Roll Dice again? Type 'y' for Yes and 'n' for No.");
 
-            if (userinput.equals("y")){
-                wuerfel.rolldice();
+            BufferedReader reader =
+                    new BufferedReader(new InputStreamReader(System.in));
+            try {
+                String userinput = reader.readLine();
+
+                if (userinput.equals("y")){
+                    n=0;
+                }
+                else  if (userinput.equals("n")){
+                    n=1;
+                    System.out.println("Bye");
+                }
+                else {
+                    System.out.println("Error 404: Please type in 'y' or 'n'!");
+                }
+            } catch (IOException e) {
+                e.printStackTrace();
             }
-            else {
-                System.out.println("Bye");
-                System.exit(0);
-            }
-        } catch (IOException e) {
-            e.printStackTrace();
+
         }
+
 
 
 
