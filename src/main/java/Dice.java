@@ -13,13 +13,14 @@ public class Dice {
         return e;
     }
 
-    public void rolldice() {
+    public int rolldice() {
         Dice Wurf1 = new Dice(6);
         Dice Wurf2 = new Dice(6);
 
         int Ergebnis = Wurf1.wuerfeln() + Wurf2.wuerfeln();
 
-        System.out.println(Ergebnis);
+        //System.out.println(Ergebnis);
+        return Ergebnis;
     }
 
 
