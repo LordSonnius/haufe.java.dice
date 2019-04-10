@@ -2,13 +2,15 @@ import java.util.Scanner;
 
 public class HaufeDice {
     public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Please enter how many sides your dices have.");
+        int diceside = scan.nextInt();
+
         int n = 0;
-        Dice wuerfel = new Dice(1);
+        Dice wuerfel = new Dice(diceside);
 
         while (n == 0) {
             int ocome = wuerfel.rolldice();//Roll 2 Dice and save outcome
-
-            Scanner scan = new Scanner(System.in);
 
             System.out.print("Guesss the outcome.");//Ask user what he/she thinks is thrown
             int x = 0;
