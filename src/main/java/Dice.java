@@ -13,15 +13,4 @@ public class Dice {
         return e;
     }
 
-    public int rolldice() {
-        Dice Wurf1 = new Dice(seiten);
-        Dice Wurf2 = new Dice(seiten);
-
-        int Ergebnis = Wurf1.wuerfeln() + Wurf2.wuerfeln();
-
-        //System.out.println(Ergebnis);
-        return Ergebnis;
-    }
-
-
 }
