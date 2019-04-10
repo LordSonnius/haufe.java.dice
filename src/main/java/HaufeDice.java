@@ -9,24 +9,24 @@ public class HaufeDice {
 
         boolean userIsPlaying = true;
         while (userIsPlaying) {
-            int ocome = rollDice(diceside);//Roll 2 Dice and save outcome
+            int Result = rollDice(diceside);//Roll 2 Dice and save result
 
             boolean userIsTrying = true;
             while (userIsTrying) {
 
-                System.out.print("Guesss the outcome.");//Ask user what he/she thinks is thrown
+                System.out.print("Guesss the result.");//Ask user what he/she thinks is thrown
                 int num = scan.nextInt();
                 System.out.println("The number entered by user: " + num);
 
-                if (num < ocome) {
-                    System.out.println("The outcome is higher than your guess. Do you want to guess again? 'y' or 'n'");
-                    userIsTrying = guessQuestion(scan, ocome);
+                if (num < Result) {
+                    System.out.println("The result is higher than your guess. Do you want to guess again? 'y' or 'n'");
+                    userIsTrying = guessQuestion(scan, Result);
 
-                } else if (num > ocome) {
-                    System.out.println("The outcome is lower than your guess. Do you want to guess again? 'y' or 'n'");
-                    userIsTrying = guessQuestion(scan, ocome);
+                } else if (num > Result) {
+                    System.out.println("The result is lower than your guess. Do you want to guess again? 'y' or 'n'");
+                    userIsTrying = guessQuestion(scan, Result);
 
-                } else if (num == ocome) {
+                } else if (num == Result) {
                     System.out.println("Congratulations, you guessed right :D ");
                     userIsTrying = false;
                 }
@@ -45,7 +45,7 @@ public class HaufeDice {
         }
     }
 
-    public static boolean guessQuestion(Scanner scan, int ocome) {
+    public static boolean guessQuestion(Scanner scan, int Result) {
 
         boolean userIsTrying = true;
         String userinput = scan.next();
@@ -53,11 +53,11 @@ public class HaufeDice {
         if (userinput.equals("y")) {
             userIsTrying = true;
         } else if (userinput.equals("n")) {
-            System.out.println("The outcome is " + ocome);
+            System.out.println("The result is " + Result);
             userIsTrying = false;
         } else {
             System.out.println("Error 404: Please type in 'y' or 'n'!");
-            System.out.println("The outcome is " + ocome);
+            System.out.println("The result is " + Result);
             System.exit(0);
         }
 
@@ -68,7 +68,7 @@ public class HaufeDice {
         Dice Wurf1 = new Dice(diceside);
         Dice Wurf2 = new Dice(diceside);
 
-        int ocome = Wurf1.wuerfeln() + Wurf2.wuerfeln();
-        return ocome;
+        int Result = Wurf1.wuerfeln() + Wurf2.wuerfeln();
+        return Result;
     }
 }
