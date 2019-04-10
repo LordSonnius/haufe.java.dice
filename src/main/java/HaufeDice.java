@@ -6,7 +6,7 @@ public class HaufeDice {
     public static void main(String[] args) {
 
         Dice wuerfel = new Dice(1);
-        wuerfel.dicen();
+        wuerfel.rolldice();
 
         System.out.println("Throw Dice again? Type 'y' for Yes and 'N' for No.");
 
@@ -16,7 +16,7 @@ public class HaufeDice {
             String userinput = reader.readLine();
 
             if (userinput.equals("y")){
-                wuerfel.dicen();
+                wuerfel.rolldice();
             }
             else {
                 System.out.println("Bye");

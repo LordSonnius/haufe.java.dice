@@ -13,7 +13,7 @@ public class Dice {
         return e;
     }
 
-    public void dicen() {
+    public void rolldice() {
         Dice Wurf1 = new Dice(6);
         Dice Wurf2 = new Dice(6);
 
